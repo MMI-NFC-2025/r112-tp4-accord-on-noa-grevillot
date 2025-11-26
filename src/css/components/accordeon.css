@@ -1,3 +1,61 @@
 /**
 * Accordeon
 */
+
+
+/* # Travail
+
+N'oublier pas votre nom, prénom et l'URL de publication Netlify...
+
+# Complétez le CSS
+
+**Faire plusieurs commits** pour chaque étape du CSS */
+
+/* styles généraux pour le détail (fermé et ouvert) */
+details {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 0.6rem 0;
+    background: #fafafa;
+    transition: box-shadow 160ms ease, background 160ms ease;
+    overflow: hidden;
+}
+
+/* résumé cliquable */
+details > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* masquer le marker natif (triangle) */
+details > summary::marker,
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* état fermé (optionnel pour différencier) */
+details:not([open]) {
+    background: #fafafa;
+}
+
+/* état ouvert */
+details[open] {
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(25, 40, 50, 0.06);
+}
+
+/* style du summary quand le détail est ouvert */
+details[open] > summary {
+    background: #f0f8ff;
+    border-bottom: 1px solid #e6eef8;
+}
+
+/* contenu interne spacing */
+details > *:not(summary) {
+    padding: 0.75rem 0.8rem 1rem;
+    color: #333;
+    line-height: 1.45;
+}
